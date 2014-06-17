@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Visma Kartverket SSB test</title>
+    <link rel="stylesheet" href="libs/visual/visual.css"/>
+</head>
+<body ng-app="visualApp">
+<div ng-controller="visualController">
+
+
+
+    <div>
+        <form ng-submit="setView(concept,time,alder)" >
+            <select ng-model="concept" ng-options="key as value for (key,value) in concepts"></select>
+            <select ng-model="alder" ng-options="key as value for (key,value) in aldersgrupper"></select>
+            <!--<select ng-model="time" ng-options="value for value in years"></select>-->
+            <input type="range" min="2005" max="2012" ng-model="time">
+            <img ng-show="loading" src="img/loading.gif" style="float:right">
+        </form>
+    </div>
+
+    <div id="visual" class="visual"></div>
+
+</div>
+
+<script src="libs/visual/lazyload.js"></script>
+<script src="libs/visual/visual.js"></script>
+<script src="libs/visual/visual.setup.js"></script>
+<script src="libs/json-stat.js"></script>
+<script src="libs/angular/angular.min.js"></script>
+
+<script src="js/visualize.js"></script>
+
+</body>
+</html>
