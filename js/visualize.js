@@ -51,13 +51,13 @@ angular.module("visualApp", [])
                     if(!ds) {
                         ds = JSONstat(jsonStat).Dataset(0);
 
-                        //Get title
-                        title = ds.Dimension("ContentsCode").Category(concept).label;
-                        title += " " + ds.Dimension("Alder").Category(alder).label;
-
                         //Get municipalities IDs
                         mun = ds.Dimension("Region").id;
                     }
+
+                    //Get title
+                    title = ds.Dimension("ContentsCode").Category(concept).label;
+                    title += " " + ds.Dimension("Alder").Category(alder).label;
 
 
 
